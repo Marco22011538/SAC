@@ -1,11 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Diagrama y Descripción de la Base de Datos</title>
 </head>
 <body>
-    
+
+    <h1>Diagrama de la Base de Datos</h1>
+    <img src="" alt="Diagrama de la Base de Datos" />
+
+    <h2>Descripción de la Arquitectura de la Base de Datos</h2>
+    <p>
+        La base de datos del subsistema de historial clínico está diseñada para almacenar y gestionar la información 
+        relevante de pacientes, médicos y su historial médico. La arquitectura se compone de las siguientes tablas:
+    </p>
+    <ul>
+        <li><strong>Pacientes:</strong> Almacena información personal de los pacientes, como nombre, apellido, correo, 
+        y datos médicos relevantes.</li>
+        <li><strong>Médicos:</strong> Contiene datos sobre los médicos, incluyendo su especialidad y datos de contacto.</li>
+        <li><strong>Historial Clínico:</strong> Registra diagnósticos y tratamientos de cada paciente, enlazando tanto a 
+        pacientes como a médicos mediante llaves foráneas.</li>
+        <li><strong>Archivos Adjuntos:</strong> Permite almacenar documentos y archivos relacionados con el historial clínico.</li>
+    </ul>
+
+    <h2>Funcionalidades del Subsistema</h2>
+    <p>
+        Esta estructura de base de datos permite implementar diversas funcionalidades para los usuarios del subsistema:
+    </p>
+    <ul>
+        <li><strong>Registro de Pacientes:</strong> Los usuarios pueden añadir nuevos pacientes y su información médica.</li>
+        <li><strong>Consulta de Historial Clínico:</strong> Permite a los médicos acceder a la información médica de los pacientes 
+        de manera rápida y eficiente.</li>
+        <li><strong>Gestión de Tratamientos:</strong> Los médicos pueden registrar diagnósticos y tratamientos, asegurando que la 
+        información esté actualizada.</li>
+        <li><strong>Subida de Archivos:</strong> Los usuarios pueden adjuntar documentos relevantes al historial clínico de cada paciente.</li>
+    </ul>
+
+    <p>
+        La relación entre las tablas garantiza la integridad de los datos y permite realizar consultas complejas de manera eficiente.
+        Esta arquitectura es fundamental para el funcionamiento del subsistema, mejorando la calidad de la atención al paciente.
+    </p>
+
 </body>
 </html>
