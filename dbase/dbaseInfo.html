@@ -79,5 +79,123 @@
         accesibles y mantengan la integridad necesaria para su uso en la atención médica.
     </p>
 
+    <h2>Código SQL para Crear la Base de Datos</h2>
+    <pre>
+CREATE DATABASE Historial_Clinico;
+GO
+
+USE Historial_Clinico;
+GO
+    </pre>
+
+    <h2>Código SQL para Crear las Tablas</h2>
+    <p>A continuación se presenta el código SQL necesario para crear las tablas junto con sus relaciones:</p>
+    <pre>
+CREATE TABLE Pacientes (
+    id_paciente INT PRIMARY KEY IDENTITY(1,1),
+    nombre NVARCHAR(100) NOT NULL,
+    apellido NVARCHAR(100) NOT NULL,
+    correo NVARCHAR(100) NOT NULL UNIQUE,
+    contraseña NVARCHAR(255) NOT NULL,
+    edad INT,
+    tipo_sangre NVARCHAR(3),
+    sexo NVARCHAR(10),
+    alergias NVARCHAR(255)
+);
+
+CREATE TABLE Medicos (
+    id_medico INT PRIMARY KEY IDENTITY(1,1),
+    nombre NVARCHAR(100) NOT NULL,
+    apellido NVARCHAR(100) NOT NULL,
+    correo NVARCHAR(100) NOT NULL UNIQUE,
+    contraseña NVARCHAR(255) NOT NULL,
+    especialidad NVARCHAR(100)
+);
+
+CREATE TABLE Historial_Clinico (
+    id_historial INT PRIMARY KEY IDENTITY(1,1),
+    id_paciente INT NOT NULL,
+    id_medico INT NOT NULL,
+    diagnostico NVARCHAR(MAX),
+    tratamientos NVARCHAR(MAX),
+    fecha DATE NOT NULL
+);
+
+CREATE TABLE Archivos_Adjuntos (
+    id_archivo INT PRIMARY KEY IDENTITY(1,1),
+    id_historial INT NOT NULL,
+    tipo_archivo NVARCHAR(100) NOT NULL,
+    ruta_archivo NVARCHAR(255) NOT NULL,
+    fecha_subida DATE NOT NULL
+);
+    </pre>
+
+    <h2>Código SQL para Crear Llaves Foráneas</h2>
+    <pre>
+-- Agregar llaves foráneas después de la creación de las tablas
+
+-- Llave foránea para la tabla Historial_Clinico hacia Pacientes
+ALTER TABLE Historial_Clinico
+ADD CONSTRAINT FK_Historial_Paciente FOREIGN KEY (id_paciente)
+REFERENCES Pacientes(id_paciente);
+
+-- Llave foránea para la tabla Historial_Clinico hacia Médicos
+ALTER TABLE Historial_Clinico
+ADD CONSTRAINT FK_Historial_Medico FOREIGN KEY (id_medico)
+REFERENCES Medicos(id_medico);
+
+-- Llave foránea para la tabla Archivos_Adjuntos hacia Historial_Clinico
+ALTER TABLE Archivos_Adjuntos
+ADD CONSTRAINT FK_Archivo_Historial FOREIGN KEY (id_historial)
+REFERENCES Historial_Clinico(id_historial);
+    </pre>
+
+    <h2>Código SQL para Insertar Registros</h2>
+    <pre>
+-- Insertar registros en la tabla Pacientes
+INSERT INTO Pacientes (nombre, apellido, correo, contraseña, edad, tipo_sangre, sexo, alergias)
+VALUES 
+    ('Juan', 'Pérez', 'juan.perez@gmail.com', 'P@ssword1', 30, 'O+', 'Masculino', 'Ninguna'),
+    ('María', 'González', 'maria.gonzalez@outlook.com', 'S3cret2', 25, 'A-', 'Femenino', 'Penicilina'),
+    ('Carlos', 'López', 'carlos.lopez@gmail.com', 'C0mpl3x3', 40, 'B+', 'Masculino', 'Ninguna'),
+    ('Ana', 'Martínez', 'ana.martinez@outlook.com', 'M@sterKey4', 35, 'AB+', 'Femenino', 'Ninguna'),
+    ('Luis', 'Hernández', 'luis.hernandez@gmail.com', 'Qwerty5', 28, 'O-', 'Masculino', 'Ninguna');
+
+SELECT * FROM Pacientes;
+
+-- Insertar registros en la tabla Médicos
+INSERT INTO Medicos (nombre, apellido, correo, contraseña, especialidad)
+VALUES 
+    ('Dr. José', 'Ramírez', 'jose.ramirez@gmail.com', 'DocPassword1', 'Cardiología'),
+    ('Dra. Laura', 'Sánchez', 'laura.sanchez@outlook.com', 'MediPass2', 'Pediatría'),
+    ('Dr. Javier', 'Torres', 'javier.torres@gmail.com', 'SecretMed3', 'Neurología'),
+    ('Dra. Patricia', 'Jiménez', 'patricia.jimenez@outlook.com', 'HealthPass4', 'Ginecología'),
+    ('Dr. Manuel', 'Morales', 'manuel.morales@gmail.com', 'SafeMed5', 'Ortopedia');
+
+SELECT * FROM Medicos;
+
+-- Insertar registros en la tabla Historial Clínico
+INSERT INTO Historial_Clinico (id_paciente, id_medico, diagnostico, tratamientos, fecha)
+VALUES 
+    (1, 1, 'Hipertensión', 'Medicamento A, Revisión mensual', '2024-01-15'),
+    (2, 2, 'Asma', 'Inhalador B', '2024-02-20'),
+    (3, 3, 'Diabetes tipo 2', 'Medicamento C, Control de dieta', '2024-03-10'),
+    (4, 4, 'Consulta de rutina', 'Sin tratamiento necesario', '2024-04-05'),
+    (5, 5, 'Fractura de brazo', 'Inmovilización, seguimiento en 2 semanas', '2024-05-01');
+
+SELECT * FROM Historial_Clinico;
+
+-- Insertar registros en la tabla Archivos Adjuntos
+INSERT INTO Archivos_Adjuntos (id_historial, tipo_archivo, ruta_archivo, fecha_subida)
+VALUES 
+    (1, 'Radiografía', 'C:\\archivos\\radiografia_juan.png', '2024-01-10'),
+    (1, 'Receta', 'C:\\archivos\\receta_juan.pdf', '2024-01-12'),
+    (2, 'Estudio', 'C:\\archivos\\estudio_maria.pdf', '2024-02-18'),
+    (3, 'Radiografía', 'C:\\archivos\\radiografia_carlos.png', '2024-03-05'),
+    (4, 'Consulta', 'C:\\archivos\\consulta_ana.txt', '2024-04-04');
+
+SELECT * FROM Archivos_Adjuntos;
+    </pre>
+
 </body>
 </html>
