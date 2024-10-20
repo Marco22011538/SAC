@@ -37,9 +37,46 @@
         <li><strong>Subida de Archivos:</strong> Los usuarios pueden adjuntar documentos relevantes al historial clínico de cada paciente.</li>
     </ul>
 
+    <h2>Organización y Consistencia de los Datos</h2>
     <p>
-        La relación entre las tablas garantiza la integridad de los datos y permite realizar consultas complejas de manera eficiente.
-        Esta arquitectura es fundamental para el funcionamiento del subsistema, mejorando la calidad de la atención al paciente.
+        La base de datos relacional garantiza la organización y consistencia de los datos mediante la aplicación de las 
+        primeras tres formas normales (1NF, 2NF y 3NF). A continuación, se detalla cómo cada una de estas formas normales 
+        contribuye a la integridad y estructura de la base de datos:
+    </p>
+
+    <h3>1. Primera Forma Normal (1NF)</h3>
+    <p>
+        La 1NF se centra en asegurar que todos los valores de las columnas sean atómicos, es decir, que no contengan listas 
+        ni conjuntos de valores. En nuestras tablas, cada atributo está diseñado para contener un único valor. Por ejemplo, 
+        en la tabla <strong>Pacientes</strong>, cada campo como el nombre y apellido está separado, lo que permite una fácil 
+        identificación y acceso a la información. Esto no solo mejora la claridad de los datos, sino que también facilita 
+        las consultas, ya que cada entrada es única y no hay ambigüedades en los valores almacenados.
+    </p>
+
+    <h3>2. Segunda Forma Normal (2NF)</h3>
+    <p>
+        La 2NF se asegura de que todos los atributos no clave dependan completamente de la clave primaria, eliminando así 
+        las dependencias parciales. En la tabla <strong>Historial Clínico</strong>, todos los atributos, como diagnóstico 
+        y tratamientos, dependen exclusivamente de la clave primaria <em>id_historial</em>. Esto significa que no hay 
+        información redundante y cada atributo está correctamente relacionado con su registro, lo que minimiza el riesgo 
+        de inconsistencias. Por ejemplo, si se actualiza el diagnóstico de un paciente, esta modificación se realiza en 
+        un solo lugar, evitando confusiones.
+    </p>
+
+    <h3>3. Tercera Forma Normal (3NF)</h3>
+    <p>
+        La 3NF se ocupa de eliminar las dependencias transitivas, asegurando que los atributos no clave no dependan de 
+        otros atributos no clave. En nuestra base de datos, cada tabla está diseñada para que todos los campos dependan 
+        únicamente de su respectiva clave primaria. Por ejemplo, en la tabla <strong>Médicos</strong>, la especialidad de 
+        un médico está directamente relacionada con su <em>id_medico</em>, sin depender de otros atributos. Esto no solo 
+        simplifica la estructura de la base de datos, sino que también asegura que la información se mantenga consistente 
+        y libre de errores.
+    </p>
+
+    <p>
+        Al aplicar estas formas normales, se minimizan las redundancias y los errores, lo que resulta en una base de datos 
+        más robusta y eficiente para el subsistema de historial clínico. Esto garantiza que los datos sean precisos, 
+        accesibles y mantengan la integridad necesaria para su uso en la atención médica.
     </p>
 
 </body>
