@@ -1,0 +1,55 @@
+/* Estilo general del cuerpo */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+/* Estilos para los encabezados */
+h1 {
+    color: #007bff; /* Azul */
+    border-bottom: 2px solid #007bff; /* Línea debajo del título */
+    padding-bottom: 10px;
+}
+
+p {
+    color: #333;
+    margin: 10px 0;
+}
+
+/* Estilo para listas no ordenadas */
+ul {
+    list-style-type: none; /* Quitar viñetas */
+    padding: 0;
+}
+
+ul li {
+    margin: 5px 0;
+}
+
+ul li a {
+    text-decoration: none;
+    color: #007bff; /* Azul */
+}
+
+ul li a:hover {
+    text-decoration: underline; /* Subrayar en hover */
+}
+
+/* Estilo para tablas */
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse; /* Eliminar espacios entre celdas */
+}
+
+table td {
+    padding: 10px;
+    text-align: center;
+}
+
+table img {
+    border-radius: 5px; /* Bordes redondeados para las imágenes */
+}

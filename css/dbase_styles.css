@@ -1,0 +1,81 @@
+/* Estilo general del cuerpo */
+body {
+    font-family: 'Verdana', sans-serif;
+    line-height: 1.5;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4faff; /* Fondo claro para contraste */
+}
+
+/* Estilos para los encabezados */
+h1 {
+    color: #004080; /* Azul oscuro */
+    border-bottom: 2px solid #0080ff; /* Línea azul clara debajo del título */
+    padding-bottom: 10px;
+    margin-top: 20px;
+}
+
+h2 {
+    color: #0056a1; /* Azul más claro para subtítulos */
+    margin-top: 15px;
+}
+
+h3 {
+    color: #0073e6; /* Azul más brillante para sub-subtítulos */
+}
+
+/* Estilo para párrafos */
+p {
+    color: #333;
+    margin: 10px 0;
+}
+
+/* Estilo para listas no ordenadas */
+ul {
+    list-style-type: disc; /* Estilo de viñetas */
+    padding-left: 20px; /* Sangría para listas no ordenadas */
+}
+
+ul li {
+    margin: 5px 0;
+}
+
+/* Estilo para listas ordenadas */
+ol {
+    padding-left: 20px; /* Sangría para listas ordenadas */
+}
+
+/* Estilo para enlaces superiores */
+section {
+    margin-bottom: 20px;
+}
+
+section a {
+    color: #0073e6; /* Azul para enlaces */
+    text-decoration: none;
+    font-weight: bold; /* Negrita para enlaces */
+}
+
+section a:hover {
+    text-decoration: underline; /* Subrayar en hover */
+}
+
+/* Estilo para imágenes */
+img {
+    display: block;
+    margin: 20px auto; /* Centrar imagen */
+    border: 2px solid #0073e6; /* Borde azul alrededor de la imagen */
+}
+
+/* Estilo para bloques de código */
+pre {
+    background-color: #e6f7ff; /* Fondo claro para bloques de código */
+    border: 1px solid #0073e6; /* Borde azul para bloques de código */
+    padding: 10px;
+    overflow-x: auto; /* Permitir scroll horizontal si es necesario */
+}
+
+/* Estilo para el contenedor de secciones */
+h1, h2, h3, p, ul, ol {
+    margin-bottom: 15px; /* Espaciado uniforme entre elementos */
+}

@@ -1,0 +1,83 @@
+/* Estilo general del cuerpo */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    background-color: #e9f2ff; /* Fondo suave para contraste */
+}
+
+/* Estilos para los encabezados */
+h1 {
+    color: #003366; /* Azul oscuro */
+    border-bottom: 3px solid #0056b3; /* Línea azul más clara debajo del título */
+    padding-bottom: 10px;
+    margin-top: 20px;
+}
+
+h2 {
+    color: #0056b3; /* Azul más claro para subtítulos */
+    margin-top: 15px;
+}
+
+/* Estilo para párrafos */
+p {
+    color: #333;
+    margin: 10px 0;
+}
+
+/* Estilo para listas no ordenadas */
+ul {
+    list-style-type: none; /* Quitar viñetas */
+    padding: 0;
+}
+
+ul li {
+    margin: 5px 0;
+}
+
+ul li a {
+    text-decoration: none;
+    color: #0056b3; /* Azul más claro */
+}
+
+ul li a:hover {
+    text-decoration: underline; /* Subrayar en hover */
+}
+
+/* Estilo para listas ordenadas */
+ol {
+    margin: 10px 0;
+    padding-left: 20px; /* Sangría para listas numeradas */
+}
+
+/* Estilo para enlaces superiores */
+section {
+    margin-bottom: 20px;
+}
+
+section a {
+    color: #0056b3; /* Azul más claro */
+    text-decoration: none;
+    font-weight: bold; /* Negrita para enlaces */
+}
+
+section a:hover {
+    text-decoration: underline; /* Subrayar en hover */
+}
+
+/* Estilo para el contenedor de secciones */
+section {
+    margin-bottom: 20px;
+}
+
+/* Estilo para listas de responsables */
+ul {
+    margin-top: 10px;
+    padding: 0;
+}
+
+ul li {
+    margin: 5px 0;
+    color: #003366; /* Azul oscuro para responsables */
+}
